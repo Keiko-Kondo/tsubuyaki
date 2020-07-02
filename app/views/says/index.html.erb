@@ -1,6 +1,15 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>tsubuyaki</title>
+  </head>
+  <body>
+    <p>Home</p>
 
-<h1>Says</h1>
+
+
+<p id="notice"><%= notice %></p>
 
 <table>
   <thead>
@@ -12,14 +21,18 @@
   <tbody>
     <% @says.each do |say| %>
       <tr>
-        <td><%= link_to 'Show', say %></td>
-        <td><%= link_to 'Edit', edit_say_path(say) %></td>
-        <td><%= link_to 'Destroy', say, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= say.content %></td>
+        <td><%= link_to '詳細', say %></td>
+        <td><%= link_to '編集', edit_say_path(say.id) %></td>
+        <td><%= link_to '削除', say, method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
+<%= link_to 'つぶやく', new_say_path %>
 
-<%= link_to 'New Say', new_say_path %>
+
+
+</body>
+</html>

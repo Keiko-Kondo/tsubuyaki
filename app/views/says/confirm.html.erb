@@ -1,7 +1,7 @@
-<h3>以下の内容で、送信する。</h3>
+<h3>この内容でつぶやき確定</h3>
 <%= form_with(model: @say, local: true) do |form| %>
   <%= form.hidden_field :content %>
-  <p>本文:<%= @blog.content %></p>
-  <%= form.submit  "登録する" %>
-  <%= form.submit "戻る",name:'back'%>
+  <p>本文:<%= @say.content %></p>
+  <%= form.submit  "確定" %>
+  <%= form.submit "もどる",name:'back'%>
 <% end %>

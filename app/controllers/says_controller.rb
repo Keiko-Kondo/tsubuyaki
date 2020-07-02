@@ -25,31 +25,22 @@ class SaysController < ApplicationController
   # POST /says.json
   def create
     @say = Say.new(say_params)
-
-    respond_to do |format|
       if params[:back]
         render :new
       elsif @say.save
-        format.html { redirect_to @say, notice: 'Say was successfully created.' }
-        format.json { render :show, status: :created, location: @say }
+        redirect_to @say, notice: 'つぶやきました！'
       else
-        format.html { render :new }
-        format.json { render json: @say.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /says/1
   # PATCH/PUT /says/1.json
   def update
-    respond_to do |format|
-      if @say.update(say_params)
-        format.html { redirect_to @say, notice: 'Say was successfully updated.' }
-        format.json { render :show, status: :ok, location: @say }
-      else
-        format.html { render :edit }
-        format.json { render json: @say.errors, status: :unprocessable_entity }
-      end
+    if @say.update(say_params)
+      redirect_to says_path,notice:"つぶやきを編集しました！"
+    else
+      render :edit
     end
   end
 
@@ -57,10 +48,7 @@ class SaysController < ApplicationController
   # DELETE /says/1.json
   def destroy
     @say.destroy
-    respond_to do |format|
-      format.html { redirect_to says_url, notice: 'Say was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to says_url, notice: 'つぶやきを削除しました！' 
   end
 
   def confirm
@@ -76,6 +64,6 @@ class SaysController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def say_params
-      params.fetch(:say, {})
+      params.require(:say).permit(:content)
     end
 end
