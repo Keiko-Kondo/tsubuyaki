@@ -6,41 +6,40 @@
     <link rel="stylesheet" type="text/css" href="/assets/says.css">
   </head>
   <body class="a_container">
-    <header class="a_item01">
+    <header>
         <img class="twitter_icon" src="/assets/Twitter_Icon.png" alt="">
         <img src="" alt="">
     </header>
-    <div class="a_item02">
+    <div>
       <div class="home">
         <p id="home">Home</p>
         <p id="notice"><%= notice %></p>
       </div>
 
-      <table>
-       <thead>
-        <tr>
-          <th colspan="3"></th>
-        </tr>
-       </thead>
-       <tbody>
-        <% @says.each do |say| %>
+      <div class="tsubuyaku">
+        <%= link_to 'つぶやく', new_say_path %>
+      </div>
+      <br>
+      <table class="ichiran">
+        <thead>
           <tr>
-            <td><%= say.content %></td>
-            <td><%= link_to '詳細', say %></td>
-            <td><%= link_to '編集', edit_say_path(say.id) %></td>
-            <td><%= link_to '削除', say, method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
+            <th colspan="3"></th>
           </tr>
-        <% end %>
-       </tbody>
+        </thead>
+        <tbody>
+          <% @says.each do |say| %>
+            <tr>
+              <td><%= say.content %></td>
+              <td><%= link_to '詳細', say %></td>
+              <td><%= link_to '編集', edit_say_path(say.id) %></td>
+              <td><%= link_to '削除', say, method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
       </table>
-
-
-    <footer>
-    </footer>
-
-
-    <br>
-    <%= link_to 'つぶやく', new_say_path %>
+      <footer>
+        <p>kondo tsubuyaki</p>
+      </footer>
     </div>
   </body>
 </html>

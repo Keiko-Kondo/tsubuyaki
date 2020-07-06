@@ -7,11 +7,29 @@
 }
 .a_container{
   display: flex;
+  position: relative;
 }
 header{
-  width: 3rem;
+  width: 5rem;
   border: 1px solid gray;
+  height: 100vh;
 }
 .home{
   border: 1px solid gray;
+  width: 100vh;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  border: 1px solid gray;
+  width: 100vh;
+}
+.tsubuyaku{
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid gray;
+}
+.ichiran{
+  border: 1px solid gray;
+  width: 100vh;
 }
