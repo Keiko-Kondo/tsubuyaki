@@ -14,3 +14,18 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+//= require jquery
+//= require jquery_ujs
+
+$(function() {
+  $('.home').on('click', function() {
+    $(this).css('color', 'blue');
+  });
+});
+
+$(function() {
+  $('.says').on('click', function() {
+    $(this).css('font-size', '2rem');
+  });
+});

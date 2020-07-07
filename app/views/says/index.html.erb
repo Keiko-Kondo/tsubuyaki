@@ -28,7 +28,7 @@
         <tbody>
           <% @says.each do |say| %>
             <tr>
-              <td><%= say.content %></td>
+              <td class="says"><%= say.content %></td>
               <td><%= link_to '詳細', say %></td>
               <td><%= link_to '編集', edit_say_path(say.id) %></td>
               <td><%= link_to '削除', say, method: :delete, data: { confirm: '本当に削除していいですか?' } %></td>
