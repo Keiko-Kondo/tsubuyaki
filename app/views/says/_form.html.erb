@@ -2,15 +2,13 @@
   <% if say.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(say.errors.count, "error") %> 件のエラーがありますよ</h2>
-
       <ul>
-      <% say.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% say.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
   <div class="actions">
     <%= form.label :つぶやき %>
     <%= form.text_field :content %>
