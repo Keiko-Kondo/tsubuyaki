@@ -48,7 +48,7 @@ class SaysController < ApplicationController
   # DELETE /says/1.json
   def destroy
     @say.destroy
-      redirect_to says_url, notice: 'つぶやきを削除しました！' 
+      redirect_to says_url, notice: 'つぶやきを削除しました！'
   end
 
   def confirm
@@ -58,12 +58,12 @@ class SaysController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_say
-      @say = Say.find(params[:id])
-    end
+  def set_say
+    @say = Say.find(params[:id])
+  end
 
     # Only allow a list of trusted parameters through.
-    def say_params
-      params.require(:say).permit(:content)
-    end
+  def say_params
+    params.require(:say).permit(:content)
+  end
 end

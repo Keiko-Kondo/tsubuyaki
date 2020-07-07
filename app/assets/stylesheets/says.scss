@@ -1,16 +1,19 @@
 // Place all the styles related to the says controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html{
+  font-size: 62.5%;
+}
 .twitter_icon{
-  width: 3rem;
-  height: 3rem;
+  width: 60px;
+  height: 60px;
 }
 .a_container{
   display: flex;
   position: relative;
 }
 header{
-  width: 5rem;
+  width: 80px;
   border: 1px solid gray;
   height: 100vh;
 }
@@ -23,11 +26,15 @@ footer{
   bottom: 0;
   border: 1px solid gray;
   width: 100vh;
+  text-align: center;
 }
 .tsubuyaku{
-  font-size: 1rem;
+  font-size: 2rem;
   text-decoration: none;
   border: 1px solid gray;
+  line-height: 50px;
+  background-color: skyblue;
+  text-align: center;
 }
 .ichiran{
   border: 1px solid gray;
